@@ -1,7 +1,7 @@
 package cloud
 
 import (
-	"github.com/javiertlopez/numeral"
+	"github.com/DarioAle/counter-api"
 
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 )

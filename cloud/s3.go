@@ -5,7 +5,7 @@ import (
 	"context"
 
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	"github.com/javiertlopez/numeral"
+	"github.com/DarioAle/counter-api"
 )
 
 func (s *storage) PutImage(ctx context.Context, countImage numeral.Image) (numeral.Image, error) {

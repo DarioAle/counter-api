@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/javiertlopez/numeral"
+	"github.com/DarioAle/counter-api"
 
 	guuid "github.com/google/uuid"
 	"go.mongodb.org/mongo-driver/bson"

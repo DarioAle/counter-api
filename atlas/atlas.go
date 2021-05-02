@@ -1,7 +1,7 @@
 package atlas
 
 import (
-	"github.com/javiertlopez/numeral"
+	"github.com/DarioAle/counter-api"
 
 	"go.mongodb.org/mongo-driver/mongo"
 )

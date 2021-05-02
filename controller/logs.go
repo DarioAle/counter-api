@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/javiertlopez/numeral"
-	"github.com/javiertlopez/numeral/errorcodes"
+	"github.com/DarioAle/counter-api"
+	"github.com/DarioAle/counter-api/errorcodes"
 
 	"github.com/gorilla/mux"
 )

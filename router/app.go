@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/javiertlopez/numeral/controller"
+	"github.com/DarioAle/counter-api/controller"
 
 	"github.com/gorilla/mux"
 )

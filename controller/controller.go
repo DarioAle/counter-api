@@ -3,7 +3,7 @@ package controller
 import (
 	"net/http"
 
-	"github.com/javiertlopez/numeral"
+	"github.com/DarioAle/counter-api"
 )
 
 // Controller handles the HTTP requests

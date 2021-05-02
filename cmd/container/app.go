@@ -4,10 +4,10 @@ import (
 	"context"
 	"time"
 
-	"github.com/javiertlopez/numeral/atlas"
-	"github.com/javiertlopez/numeral/cloud"
-	"github.com/javiertlopez/numeral/controller"
-	"github.com/javiertlopez/numeral/router"
+	"github.com/DarioAle/counter-api/atlas"
+	"github.com/DarioAle/counter-api/cloud"
+	"github.com/DarioAle/counter-api/controller"
+	"github.com/DarioAle/counter-api/router"
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
