@@ -1,4 +1,4 @@
-module github.com/javiertlopez/numeral
+module github.com/DarioAle/counter-api
 
 go 1.16
 

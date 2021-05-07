@@ -13,10 +13,10 @@ RUN apk update && apk add --no-cache ca-certificates && update-ca-certificates
 # Create user.
 RUN addgroup -S axiom && adduser -S numeral -G axiom
 
-WORKDIR $GOPATH/src/github.com/javiertlopez/numeral/
+WORKDIR $GOPATH/src/github.com/DarioAle/counter-api/
 COPY . .
 
-RUN go get github.com/javiertlopez/numeral/cmd/container
+RUN go get github.com/DarioAle/counter-api/cmd/container
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s -X main.commit=${commit} -X main.version=${version}" -o /go/bin/main ./cmd/container
 
 # Small image
