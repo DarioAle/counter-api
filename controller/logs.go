@@ -42,7 +42,7 @@ func (c *controller) CreateLog(w http.ResponseWriter, r *http.Request) {
 
 	response, err := c.repository.CreateLog(
 		r.Context(),
-		numeral.Log{
+		counter.Log{
 			DeviceID: device,
 			ImageKey: handler.Filename,
 		},
@@ -71,7 +71,7 @@ func (c *controller) CreateLog(w http.ResponseWriter, r *http.Request) {
 		)
 	}
 
-	image := numeral.Image{
+	image := counter.Image{
 		KeyID:  response.ID,
 		Binary: buf.Bytes(),
 	}
@@ -113,7 +113,7 @@ func (c *controller) UpdateLog(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["id"]
 
-	var log numeral.Log
+	var log counter.Log
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&log); err != nil {
 		JSONResponse(

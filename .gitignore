@@ -16,3 +16,8 @@
 
 # Env files
 *.env
+deploy.yml
+serviceNodePort.yaml
+task-definition.json
+Makefile
+ecs-service.json

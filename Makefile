@@ -1,7 +1,7 @@
 COMMIT			:=		$(shell git rev-parse --short HEAD)
 VERSION			:=		$(shell git describe --tags --always)
-REGISTRY		:=		233121219514.dkr.ecr.us-east-1.amazonaws.com
-IMAGE_NAME		:=		${REGISTRY}/numeral
+REGISTRY		:=		001219492244.dkr.ecr.us-east-1.amazonaws.com
+IMAGE_NAME		:=		${REGISTRY}/counter-repo
 
 image:
 	docker build --build-arg commit=${COMMIT} --build-arg version=${VERSION} -t ${IMAGE_NAME} .

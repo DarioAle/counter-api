@@ -1,4 +1,4 @@
-package numeral
+package counter
 
 import "context"
 

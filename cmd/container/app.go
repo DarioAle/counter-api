@@ -17,7 +17,7 @@ import (
 )
 
 // Database keeps the database name
-const Database = "numeral"
+const Database = "counter"
 
 const mongoTimeout = 15 * time.Second
 
@@ -59,7 +59,7 @@ func New(cfg AppConfig) App {
 
 	repository := atlas.New(db)
 
-	storage := cloud.New("picasso-numeral", s3Client)
+	storage := cloud.New("counter-bucket-esp32cam", s3Client)
 
 	controller := controller.New(cfg.commit, cfg.version, repository, storage)
 

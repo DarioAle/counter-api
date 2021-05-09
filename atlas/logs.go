@@ -26,7 +26,7 @@ type log struct {
 	UpdatedAt time.Time `bson:"updatedAt"`
 }
 
-func (r *repository) CreateLog(ctx context.Context, countLog numeral.Log) (numeral.Log, error) {
+func (r *repository) CreateLog(ctx context.Context, countLog counter.Log) (counter.Log, error) {
 	collection := r.mongo.Collection(Collection)
 	time := time.Now()
 
@@ -43,14 +43,14 @@ func (r *repository) CreateLog(ctx context.Context, countLog numeral.Log) (numer
 
 	_, err := collection.InsertOne(ctx, insert)
 	if err != nil {
-		return numeral.Log{}, err
+		return counter.Log{}, err
 	}
 
 	return insert.toModel(), nil
 }
 
 // GetByID retrieves a log with the ID
-func (r *repository) GetByID(ctx context.Context, id string) (numeral.Log, error) {
+func (r *repository) GetByID(ctx context.Context, id string) (counter.Log, error) {
 	collection := r.mongo.Collection(Collection)
 	var response log
 
@@ -60,16 +60,16 @@ func (r *repository) GetByID(ctx context.Context, id string) (numeral.Log, error
 
 	if err != nil {
 		if err == mongo.ErrNoDocuments {
-			return numeral.Log{}, fmt.Errorf("not found")
+			return counter.Log{}, fmt.Errorf("not found")
 		}
 
-		return numeral.Log{}, err
+		return counter.Log{}, err
 	}
 
 	return response.toModel(), nil
 }
 
-func (r *repository) UpdateLog(ctx context.Context, id string, countLog numeral.Log) (numeral.Log, error) {
+func (r *repository) UpdateLog(ctx context.Context, id string, countLog counter.Log) (counter.Log, error) {
 	collection := r.mongo.Collection(Collection)
 	time := time.Now()
 
@@ -81,10 +81,10 @@ func (r *repository) UpdateLog(ctx context.Context, id string, countLog numeral.
 
 	if err != nil {
 		if err == mongo.ErrNoDocuments {
-			return numeral.Log{}, fmt.Errorf("not found")
+			return counter.Log{}, fmt.Errorf("not found")
 		}
 
-		return numeral.Log{}, err
+		return counter.Log{}, err
 	}
 
 	insert.UpdatedAt = time
@@ -96,14 +96,14 @@ func (r *repository) UpdateLog(ctx context.Context, id string, countLog numeral.
 
 	_, err = collection.UpdateOne(ctx, filter, update)
 	if err != nil {
-		return numeral.Log{}, err
+		return counter.Log{}, err
 	}
 
 	return insert.toModel(), nil
 }
 
-func (l log) toModel() numeral.Log {
-	return numeral.Log{
+func (l log) toModel() counter.Log {
+	return counter.Log{
 		ID:        l.ID,
 		Count:     l.Count,
 		ImageKey:  l.ImageKey,

@@ -14,7 +14,7 @@ type repository struct {
 // New returns a repository instance
 func New(
 	m *mongo.Database,
-) numeral.Repository {
+) counter.Repository {
 	return &repository{
 		mongo: m,
 	}

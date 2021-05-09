@@ -10,7 +10,7 @@
             "request": "launch",
             "mode" : "auto",
             "program": "${workspaceFolder}/cmd/container",
-            "envFile": "${workspaceFolder}/dev.env",
+            "envFile": "${workspaceFolder}/.env",
             "args" : []
         }
     ]

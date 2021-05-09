@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/DarioAle/counter-api"
@@ -20,17 +21,18 @@ type controller struct {
 	commit  string
 	version string
 
-	repository numeral.Repository
-	storage    numeral.Storage
+	repository counter.Repository
+	storage    counter.Storage
 }
 
 // New returns a controller
 func New(
 	c string,
 	v string,
-	r numeral.Repository,
-	s numeral.Storage,
+	r counter.Repository,
+	s counter.Storage,
 ) Controller {
+	fmt.Println("Init controller")
 	return &controller{
 		commit:     c,
 		version:    v,
